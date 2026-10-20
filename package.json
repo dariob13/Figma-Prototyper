@@ -1,9 +1,27 @@
 {
   "name": "stadt-wien-figma-prototyper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Agent skill for creating editable Figma prototypes of Stadt Wien (wien.gv.at) pages with the Wiener Melange theme.",
-  "bin": { "stadt-wien-figma-prototyper": "bin/install.js" },
-  "files": ["bin", "skills"],
+  "bin": {
+    "stadt-wien-figma-prototyper": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "skills"
+  ],
   "license": "MIT",
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dariob13/Figma-Prototyper.git"
+  },
+  "homepage": "https://github.com/dariob13/Figma-Prototyper#readme",
+  "keywords": [
+    "agent-skill",
+    "figma",
+    "stadt-wien",
+    "wiener-melange"
+  ]
 }

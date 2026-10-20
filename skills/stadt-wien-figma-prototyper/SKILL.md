@@ -1,6 +1,6 @@
 ---
 name: stadt-wien-figma-prototyper
-description: Create or update editable Figma website prototypes and layout blueprints for Stadt Wien (wien.gv.at) that reproduce the live Wiener Melange theme as closely as possible. Use for City of Vienna page wireframes, layouts, and Figma handoffs; not for unrelated websites or production code.
+description: Create or update editable Figma prototypes and blueprints for Stadt Wien (wien.gv.at) using the Wiener Melange component kit and live theme; not for other sites or production code.
 ---
 
 # Stadt Wien Figma Prototyper
@@ -13,6 +13,16 @@ Translate a City of Vienna website brief into a content-led, mobile-first Figma 
 - **Build in Figma:** When the user requests creating, updating, or prototyping a design, make the editable Figma artifact and relevant interactions. A written plan alone does not complete a build request.
 - Use the requested Figma file or selected destination. Create a new file only when needed. Default new-file name: `Stadt Wien - "[Topic]"`.
 - If the deliverable is materially ambiguous, clarify it while continuing source research. If tools or access are unavailable, report the specific limitation and provide a clearly labeled blueprint; do not claim a file was created.
+
+## Start from the Wiener Melange kit
+
+Use the [Stadt Wien – Wiener Melange Kit](https://www.figma.com/design/IuWrnybtaBps4vOAacErua) as the reusable starting point for new Figma builds. Read [references/wiener-melange-kit.md](references/wiener-melange-kit.md) for its page inventory, font setup, known approximations, and access limitations.
+
+- For a new prototype, have the user duplicate the kit into their own Figma drafts or team and supply the copy's URL, unless an available tool can duplicate it. Build in that copy; never edit the shared source kit as part of a page-prototyping task.
+- Preserve an explicitly requested destination file. Inspect it first and reuse existing kit components, variables, and styles. Use published library imports only when available; otherwise copy the required assets from the user's kit copy with their existing instance and variable bindings intact. Do not claim that a raw file link is a published library.
+- If duplication, access, or copying is unavailable, continue source research and blueprint work, explain the specific missing access, and request only what is needed. Build from verified specifications when the user chooses that fallback.
+- Compose pages from component instances. Inspect actual variant names and component properties instead of guessing IDs or rebuilding the component library. Keep the kit's source pages and add project pages as needed.
+- The kit uses **Inter as a placeholder** in its `WM Web/…` text styles. Finish text edits with a loadable font, then have the user switch those styles to Wiener Melange Regular/Bold in Figma. The skill installation does not install or license Wiener Melange.
 
 ## Establish the brief and sources
 
@@ -107,7 +117,7 @@ Links inside text: #1F4BAF, underline (offset 3 px). Abbreviations (`<abbr>`, e.
 Use the original assets, never redraw:
 
 - **Logo:** copy the SVG from `wm-header a svg` on any wien.gv.at page (viewBox 0 0 311 142, rendered 80 × 36.5; red `#FF0000` shield + `#292929` wordmark). Accessible name "Startseite wien.gv.at".
-- **Icons:** read the `<symbol>` elements from the shadow root of any `wm-icon` (79 symbols, e.g. `burger, search, chevron-left/right/up/down, external, download, pin, clock, close, info, email, telefon, barrierefrei, vienna, amtswege, contact, jobs, language-change, bluesky, facebook, instagram, linkedin, tiktok, wien-bot, x, youtube`). Import with `createNodeFromSvg` using the symbol's viewBox, set fill (or stroke for `external`) to #292929 or #1F4BAF for link icons.
+- **Icons:** read the `<symbol>` elements from the shadow root of any `wm-icon` (79 symbols, e.g. `burger, search, chevron-left/right/up/down, external, download, pin, clock, close, info, email, telefon, barrierefrei, vienna, amtswege, contact, jobs, language-change, bluesky, facebook, instagram, linkedin, tiktok, wien-bot, x, youtube`). Reuse the kit icons. If importing a missing icon with `createNodeFromSvg`, preserve the symbol's viewBox, original multicolor fills, and `fill-rule="evenodd"` / even-odd vector winding. Recolor only monochrome icons to #292929 or #1F4BAF for links; overwriting every fill turns some social and contact icons into solid shapes.
 - Sizes: header/tag icons 26, icon rows 28, highlight icon 54, close in notices 20, social icons 26 with gap 10.
 
 ## Page layout (desktop 1440, wrapper at x 120, content 1100 at x 170)
@@ -127,11 +137,11 @@ Breadcrumbs are not used on current wien.gv.at pages; parent channels appear as 
 
 ## Component specifications
 
-Each entry: official pattern · structure · measurements · variants. Build each as a reusable Figma component with variants and text properties; card containers with free content may be styled auto-layout frames bound to variables and the shadow effect style.
+Each entry: official pattern · structure · measurements · variants. Reuse the corresponding kit component and its exposed properties first. These cached specifications are for comparison and missing-component fallbacks, not instructions to rebuild the kit; card containers with free content may be styled auto-layout frames bound to existing variables and shadow styles.
 
 **Header** (`/patterns/header/`, `menu`, `suche`) · Logo · search field · menu button. Desktop 1440×100: wrapper content starts x 170; logo 80×36.5; gap 50; search `wm-input` 841×40, fill #F3F1EF, 1 px #97948C, padding 6.8/13.6, placeholder "Wie können wir helfen?" 17 #8A8A8A, search icon 26 at 16 from the right; gap 50; menu button "Menü" 16/23.2 + burger 26, gap 10. Mobile 375×56: padding 15, logo, search icon button, "Menü" 15 px + burger. Header shadow 0/4/8 16 %. Variant: mobile menu open (full-screen white; close X top right; "ENGLISH", "NEW IN VIENNA?"; divider; "STADTPLAN", "AMTSWEGE", "KONTAKTE", "JOBS BEI DER STADT" with icons, uppercase; divider; channel accordion with the current path expanded and the current page underlined).
 
-**Stage** (`/patterns/stage/`) · Variants: (a) image + title box, (b) image + title box + CTA, (c) title only. Image 1200×450 (8:3) fill #F3F1EF behind; mobile 1:1. Title box: white, padding 15/20, positioned 50 from the left edge of the 1200 image and flush with the image bottom (overlaps the image). H1 Bold 32/41.6, −1 %. With CTA: CTA (Hervorgehobener Link) below H1 inside the box, box grows (e.g. 464×111). Title-only stage: H1 at content x 170, no box.
+**Stage** (`/patterns/stage/`) · Variants: (a) image + title box, (b) image + title box + CTA, (c) title only. Image 1200×450 (8:3) fill #F3F1EF behind; the kit build measured a 5:4 mobile image in the handbook, while the earlier live-page capture used 1:1. Choose the variant measured on the target page; do not apply either ratio to every mobile Stage. Title box: white, padding 15/20, positioned 50 from the left edge of the 1200 image and flush with the image bottom (overlaps the image). H1 Bold 32/41.6, −1 %. With CTA: CTA (Hervorgehobener Link) below H1 inside the box, box grows (e.g. 464×111). Title-only stage: H1 at content x 170, no box.
 
 **Tag list** (`/patterns/tag/`) · Horizontal, wrap, gap 10, padding-top 10 (start page above stage: padding 26/0/16/0). Tag: height 34, padding 2.5/13, radius 20, white, 1 px #97948C, text 16/21.6, gap 10 to icon. Variants: text only · leading icon 26 (Amtswege, Stadtplan, Meldeservice, Badeordnung/download) · back (chevron-left, parent channel) · dropdown button (text + chevron-down 26, 16/23.2, opens a menu, e.g. "Alle Bäder").
 
@@ -178,7 +188,7 @@ Draft copy in clear German unless asked otherwise, following the editorial guida
 
 ## Build workflow in Figma
 
-Use the available Figma skills (file creation, composed screens, libraries). For existing files, inspect structure first and reuse suitable pages and foundations; avoid parallel copies.
+Use the available Figma skills for the operations needed (composed screens, libraries, file creation only for a fallback). Start in the user's kit copy or explicit destination. Inspect its structure and reuse suitable pages and foundations; avoid parallel copies.
 
 Default organization for a new project (adjust to scope):
 
@@ -189,9 +199,9 @@ Default organization for a new project (adjust to scope):
 
 Steps:
 
-1. Create variables for the color and spacing tokens and one effect style for the shadow.
-2. Create text styles for every role in the typography table, named by role (e.g. `WM Web/H2 Card`), with the target Wiener Melange style and source in the description.
-3. Build components in this order: icons and logo (original SVGs), tag, CTA/quicklink, list item, notice, card variants, table row, header, stage, carousel (interactive variants), footer, mobile menu.
+1. Inspect the copied kit's local components, variants, properties, variables, text styles, and both shadow styles. Reuse existing tokens and styles; create only verified missing ones.
+2. Inspect the relevant patterns on the kit pages. Select variants and set text, boolean, and instance-swap properties on instances; a text property has one default label per set, so override labels for the topic. Set boolean properties before accessing optional hidden icon layers.
+3. Build a missing component only after checking the kit, live page, and handbook. Keep original SVG fill rules and colors, bind its values to existing foundations, and record the addition. Do not recreate all 67 patterns for an ordinary prototype.
 4. Compose the 375 frame first, then 1440, using instances, Auto Layout, and the vertical rhythm above. Set frame grids: 12 columns in 1100 with gutter 20 (desktop), 4 columns in 345 (mobile) — grids are a Figma aid; the theme uses CSS grid/flex.
 5. Add the interactions that demonstrate the citizen journey: mobile menu open/close, carousel next/prev (`CHANGE_TO` between variants), accordion expand, and real URLs on links whose targets are verified. Set flow starting points for mobile and desktop.
 
@@ -199,7 +209,7 @@ Steps:
 
 ## Verification and delivery
 
-Compare the rendered 375 and 1440 frames side by side with the live page (and the reference capture) at the same widths: header proportions, stage box position, tag height, card padding and shadow, grid widths and gaps, section bands, quicklink borders, carousel controls, footer. Check wrapping, clipping, overlaps, image crops, variable bindings, instance links, and component states. Exercise the prototype flows from their starting points. Correct visible differences before delivery; record remaining deviations with reasons.
+Compare the rendered 375 and 1440 frames side by side with the live page (and the reference capture) at the same widths: header proportions, stage box position, tag height, card padding and shadow, grid widths and gaps, section bands, quicklink borders, carousel controls, footer. Check wrapping, clipping, overlaps, image crops, variable bindings, instance links, and component states. Check quicklink and list rows with multiline text, content-hugging section heights, component-set grids after resizing, absolutely positioned notification close buttons, and visible fieldset states. Verify focus/error/disabled styling on the actual instance, not just in its variant name. Exercise the prototype flows from their starting points. Correct visible differences before delivery; record remaining deviations with reasons.
 
 Apply WCAG 2.2 AA: contrast, visible focus (theme: 3 px, Interaktiv), labels, heading hierarchy (H1 stage → H2 per card/section → H3), touch targets, non-color cues. Annotate keyboard order, accessible names (logo "Startseite wien.gv.at", search label "Suche", carousel buttons "Vorheriges/Nächstes Element", dots "Element n von m"), and expanded/error states. A Figma prototype cannot prove keyboard or screen-reader compliance; list the remaining implementation checks.
 

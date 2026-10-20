@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // Installs the stadt-wien-figma-prototyper skill into local agent skill folders.
 // Usage:
-//   npx github:<owner>/stadt-wien-figma-prototyper           # Claude Code + Codex/agents folders
-//   npx github:<owner>/stadt-wien-figma-prototyper --claude  # only ~/.claude/skills
-//   npx github:<owner>/stadt-wien-figma-prototyper --agents  # only ~/.agents/skills
-//   npx github:<owner>/stadt-wien-figma-prototyper --dir <path>  # custom skills folder
+//   npx github:dariob13/Figma-Prototyper           # Claude Code + Codex/agents folders
+//   npx github:dariob13/Figma-Prototyper --claude  # only ~/.claude/skills
+//   npx github:dariob13/Figma-Prototyper --agents  # only ~/.agents/skills
+//   npx github:dariob13/Figma-Prototyper --dir <path>  # custom skills folder
 //   Add --force to overwrite an existing installation.
 
 const fs = require("fs");
@@ -12,6 +12,7 @@ const path = require("path");
 const os = require("os");
 
 const SKILL_NAME = "stadt-wien-figma-prototyper";
+const KIT_URL = "https://www.figma.com/design/IuWrnybtaBps4vOAacErua";
 const SRC = path.join(__dirname, "..", "skills", SKILL_NAME);
 
 const args = process.argv.slice(2);
@@ -21,6 +22,8 @@ const help = args.includes("--help") || args.includes("-h");
 if (help) {
   console.log("Install the Stadt Wien Figma prototyper skill.\n");
   console.log("Options: --claude | --agents | --dir <path> | --force");
+  console.log(`\nFigma starter kit: ${KIT_URL}`);
+  console.log("Duplicate the kit into your own Figma workspace, then give your agent the copy URL.");
   process.exit(0);
 }
 
@@ -77,6 +80,10 @@ for (const base of targets) {
 }
 
 if (!failed) {
-  console.log("\nDone. Restart Claude Code or Codex (or run /skills) to load the skill.");
+  console.log("\nDone. Restart your agent or refresh its skills list to load the skill.");
+  console.log(`Figma starter kit: ${KIT_URL}`);
+  console.log("Duplicate it into your own workspace; build in the copy, not the shared source.");
+  console.log("The kit uses Inter placeholders. Switch WM Web/… styles to Wiener Melange after text editing.");
+  console.log("Figma access is separate from skill installation; request access if duplication is unavailable.");
 }
 process.exit(failed ? 1 : 0);
