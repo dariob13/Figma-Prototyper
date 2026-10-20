@@ -1,6 +1,8 @@
 # Wiener Melange kit
 
-Starter file: [Stadt Wien – Wiener Melange Kit](https://www.figma.com/design/IuWrnybtaBps4vOAacErua).
+Primary Figma pattern library: [Stadt Wien – Wiener Melange Kit](https://www.figma.com/design/IuWrnybtaBps4vOAacErua/Stadt-Wien-%E2%80%93-Wiener-Melange-Kit). File key: `IuWrnybtaBps4vOAacErua`. Use this stable file link; session parameters such as `m` and `t` are not needed.
+
+For each task, inspect the relevant pattern pages here (or in a verified duplicate), identify the actual component variants/properties and their token/style bindings, and reuse them in the working file. Record the library and chosen component references in the handoff. The older “Stadt Wien HTML” capture is supporting evidence for layouts, not a substitute component library. The live site and official handbook still govern current styling and pattern usage.
 
 This reusable Figma kit covers the Stadt Wien handbook patterns. It is not an official Stadt Wien release. The inventory below records the supplied build handoff: theme CSS v2.10.0, 67 handbook pattern pages, 470 rendered examples captured at desktop/mobile widths of 1440 and 375 px, and original icon/logo SVGs. Recheck the target live page and current handbook when using the kit; the counts describe the delivered snapshot, not a guarantee about future versions.
 

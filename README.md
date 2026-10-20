@@ -26,6 +26,8 @@ Update an installation managed by Skills with `npx skills update`. The public Gi
 
 ## Start a prototype from the kit
 
+The **primary Figma pattern library** is [Stadt Wien – Wiener Melange Kit](https://www.figma.com/design/IuWrnybtaBps4vOAacErua/Stadt-Wien-%E2%80%93-Wiener-Melange-Kit), file key `IuWrnybtaBps4vOAacErua`. The skill directs the agent to inspect its actual components, variants, properties and foundations before building. HTML captures are supporting layout references.
+
 1. Open the **[Stadt Wien – Wiener Melange Kit](https://www.figma.com/design/IuWrnybtaBps4vOAacErua)** and duplicate it into your own Figma drafts or team.
 2. Give your agent the duplicate's URL and the page brief. It builds from component instances inside your copy, preserving variables and styles. The shared starter is left intact. If you specify an existing destination, the skill reuses or transfers the required kit assets there.
 3. Finish text edits, then switch the `WM Web/…` text styles from **Inter** to **Wiener Melange Regular/Bold** in Figma and recheck wrapping.
