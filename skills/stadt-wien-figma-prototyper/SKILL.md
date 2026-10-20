@@ -11,7 +11,7 @@ Translate a City of Vienna website brief into a content-led, mobile-first Figma 
 
 - **Blueprint:** When the user requests a plan, specification, or layout recommendation, provide a sourced blueprint. Do not create or modify a Figma file solely to describe a design.
 - **Build in Figma:** When the user requests creating, updating, or prototyping a design, make the editable Figma artifact and relevant interactions. A written plan alone does not complete a build request.
-- Use the requested Figma file or selected destination. Create a new file only when needed. Default new-file name: `Stadt Wien - "[Topic]"`.
+- Use the requested Figma file or selected destination. Create a new file only when needed. Name newly created or duplicated project files `Stadt Wien Entwurf - [Topic]`, replacing `[Topic]` with the page's topic, for example `Stadt Wien Entwurf - Fahrradwerkstätte Wien`. Use a plain hyphen with spaces and no quotation marks. Preserve the name of an existing destination unless the user requests a rename.
 - If the deliverable is materially ambiguous, clarify it while continuing source research. If tools or access are unavailable, report the specific limitation and provide a clearly labeled blueprint; do not claim a file was created.
 
 ## Primary Figma pattern library: Wiener Melange

@@ -1,6 +1,6 @@
 {
   "name": "stadt-wien-figma-prototyper",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Agent skill for creating editable Figma prototypes of Stadt Wien (wien.gv.at) pages with the Wiener Melange theme.",
   "bin": {
     "stadt-wien-figma-prototyper": "bin/install.js"

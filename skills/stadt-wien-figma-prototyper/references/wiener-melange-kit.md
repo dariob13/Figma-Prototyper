@@ -10,7 +10,7 @@ This reusable Figma kit covers the Stadt Wien handbook patterns. It is not an of
 
 The link above is a Figma Design file link, not a Figma Community publication or a published component-library key. Public installation of this skill does not grant access to the file, permission to duplicate it, or access to a team library. If Figma requires permission, request access from the file owner. A Community URL has not been supplied; do not invent one or claim the kit is publicly duplicable without checking.
 
-For a new prototype, open the file and duplicate it into the user's drafts or team. Ask for that copy's URL, inspect it, and build there using local component instances. Keep the kit pages and add project-specific pages. Never modify the shared starter during ordinary page work. For an existing destination, reuse its kit assets or transfer the required components and foundations from the user's copy, preserving bindings; do not assume remote imports are possible from a file URL.
+For a new prototype, open the file and duplicate it into the user's drafts or team. Name the project copy `Stadt Wien Entwurf - [Topic]`, replacing `[Topic]` with the topic (for example `Stadt Wien Entwurf - Fahrradwerkstätte Wien`). Apply the same naming rule to a newly created fallback file. Ask for the copy's URL, inspect it, and build there using local component instances. Keep the kit pages and add project-specific pages. Never modify the shared starter during ordinary page work. For an existing destination, preserve its name and reuse its kit assets or transfer the required components and foundations from the user's copy, preserving bindings; do not assume remote imports are possible from a file URL.
 
 ## Delivered inventory
 
